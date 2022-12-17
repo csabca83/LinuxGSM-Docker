@@ -28,48 +28,48 @@ RUN echo "**** Install Base LinuxGSM Requirements ****" \
     && apt-get update \
     && apt-get install -y software-properties-common \
     && add-apt-repository multiverse \
-    && apt-get update \
-    && apt-get install -y \
-    bc \
-    binutils \
-    bsdmainutils \
-    bzip2 \
-    ca-certificates \
-	cron \
-    cpio \
-    curl \
-    distro-info \
-    file \
-    gzip \
-    hostname \
-    jq \
-    lib32gcc1 \
-    lib32stdc++6 \
-    netcat \
-    python3 \
-    tar \
-    tmux \
-    unzip \
-    util-linux \
-    wget \
-    xz-utils \
+    && apt-get update 
+RUN apt-get install -y    bc
+RUN apt-get install -y    binutils 
+RUN apt-get install -y    bsdmainutils 
+RUN apt-get install -y    bzip2 
+RUN apt-get install -y    ca-certificates 
+RUN apt-get install -y	  cron 
+RUN apt-get install -y    cpio 
+RUN apt-get install -y    curl 
+RUN apt-get install -y    distro-info 
+RUN apt-get install -y    file 
+RUN apt-get install -y    gzip 
+RUN apt-get install -y    hostname 
+RUN apt-get install -y    jq 
+# RUN apt-get install -y    lib32gcc1 
+# RUN apt-get install -y    lib32stdc++6 
+RUN apt-get install -y    netcat 
+RUN apt-get install -y    openjdk-17-jre 
+RUN apt-get install -y    python3 
+RUN apt-get install -y    tar 
+RUN apt-get install -y    tmux 
+RUN apt-get install -y    unzip 
+RUN apt-get install -y    util-linux 
+RUN apt-get install -y    wget 
+RUN apt-get install -y    xz-utils 
     # Docker Extras
-    cron \
-    iproute2 \
-    iputils-ping \
-    nano \
-    vim \
-    sudo \
-    tini
+RUN apt-get install -y    cron 
+RUN apt-get install -y    iproute2 
+RUN apt-get install -y    iputils-ping 
+RUN apt-get install -y    nano 
+RUN apt-get install -y    vim 
+RUN apt-get install -y    sudo 
+RUN apt-get install -y    tini
 
 # Install SteamCMD
-RUN echo "**** Install SteamCMD ****" \
-    && echo steam steam/question select "I AGREE" | debconf-set-selections \
-    && echo steam steam/license note '' | debconf-set-selections \
-    && dpkg --add-architecture i386 \
-    && apt-get update -y \
-    && apt-get install -y --no-install-recommends libsdl2-2.0-0:i386 steamcmd \
-    && ln -s /usr/games/steamcmd /usr/bin/steamcmd
+# RUN echo "**** Install SteamCMD ****" \
+#     && echo steam steam/question select "I AGREE" | debconf-set-selections \
+#     && echo steam steam/license note '' | debconf-set-selections \
+#     && dpkg --add-architecture i386 \
+#     && apt-get update -y \
+#     && apt-get install -y --no-install-recommends libsdl2-2.0-0:i386 steamcmd \
+#     && ln -s /usr/games/steamcmd /usr/bin/steamcmd
 
 # Install NodeJS
 RUN echo "**** Install NodeJS ****" \
