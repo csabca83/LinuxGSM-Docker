@@ -111,6 +111,7 @@ RUN echo "**** Add linuxgsm user ****" \
 #RUN echo "**** Create /opt/linuxgsm ****" \
 #    && mkdir -p /opt/linuxgsm \
 #    && chown linuxgsm:linuxgsm /opt/linuxgsm
+#
 
 ## Download linuxgsm.sh
 RUN echo "**** Download linuxgsm.sh ****" \
