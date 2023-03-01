@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  linuxgsm:
+    image: "jager1888/linuxgsm:latest"
+    container_name: mcserver
+    environment:
+      - GAMESERVER=mcserver
+      - LGSM_GITHUBUSER=GameServerManagers
+      - LGSM_GITHUBREPO=LinuxGSM
+      - LGSM_GITHUBBRANCH=master
+    volumes:
+      - /home/ubuntu/LinuxGSM-Docker/data/serverfiles:/home/linuxgsm/serverfiles
+      - /home/ubuntu/LinuxGSM-Docker/data/log:/home/linuxgsm/log
+      - /home/ubuntu/LinuxGSM-Docker/data/lgsm:/home/linuxgsm/lgsm
+    ports:
+      - "25565:25565/tcp"
+    restart: unless-stopped
