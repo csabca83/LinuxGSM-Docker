@@ -55,4 +55,4 @@ Commands can be run just like standard LinuxGSM using the docker exec command.
 docker exec -it csgoserver ./csgoserver details
 
 ```
-#
+
